@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="route-composable">
+    <header class="sticky top-0 z-30 border-b border-line bg-bg/90 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center gap-6 px-5 py-4 md:px-8">
+        <a href="#top" class="flex items-center gap-3" aria-label="Inicio">
+          <svg width="22" height="21" viewBox="0 0 29 28" aria-hidden="true"><path d="M0 12.4443H11.5426L22.1489 27.9999H10.6034L0 12.4443Z" fill="#FAFAFA"/><path d="M3.05469 0L28.0606 0V12.4444H11.5374L3.05469 0Z" fill="#FAFAFA"/></svg>
+          <span class="font-display text-[15px] font-medium">Project 84</span>
+        </a>
+        <nav class="ml-auto hidden gap-6 text-sm text-muted md:flex">
+          <a class="hover:text-ink" href="#elegir">Elegir stack</a>
+          <a class="hover:text-ink" href="#proceso">Proceso</a>
+          <a class="hover:text-ink" href="#comparar">Comparar</a>
+          <a class="hover:text-ink" href="#costos">Costos</a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+  </body>
+</html>
